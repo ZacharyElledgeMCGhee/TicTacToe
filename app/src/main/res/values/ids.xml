@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="text_view_p1" type="id">player1</item>
+    <item name="text_view_p2" type="id">player2</item>
+    <item name="button_00" type="id">button00</item>
+    <item name="button_01" type="id">button01</item>
+    <item name="button_02" type="id">button02</item>
+    <item name="button_22" type="id">button22</item>
+    <item name="button_21" type="id">button21</item>
+    <item name="button_20" type="id">button20</item>
+    <item name="button_12" type="id">button12</item>
+    <item name="button_11" type="id">button11</item>
+    <item name="button_10" type="id">button10</item>
+    <item name="button_reset" type="id" />
+</resources>
