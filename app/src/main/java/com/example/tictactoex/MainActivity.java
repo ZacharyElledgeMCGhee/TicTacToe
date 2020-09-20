@@ -1,7 +1,9 @@
 package com.example.tictactoex;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             @Override
             public void onClick(View view){
-
+                resetGame();
             }
         });
     }
@@ -141,5 +143,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         roundCount=0;
         player1Turn = true;
     }
+    private void resetGame(){
+        player1points = 0;
+        player2points = 0;
+        updatePointsText();
+        resetBoard();
+    }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+
+        outPersistentState.putInt("roundCount", roundCount);
+        outPersistentState.putInt("player1Points", player1points);
+        outPersistentState.putInt("player2Points", player2points);
+        outPersistentState.putBoolean("player1Turn", player1Turn);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState)
+    {
+        super.onRestoreInstanceState(savedInstanceState);
+        roundCount= savedInstanceState.getInt("roundCount");
+        player1points = savedInstanceState.getInt("player1Points");
+        player2points = savedInstanceState.getInt("player2Points");
+        player1Turn = savedInstanceState.getBoolean("player1Turn");
+
+    }
 }

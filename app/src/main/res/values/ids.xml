@@ -2,15 +2,15 @@
 <resources>
 
     <item name="button_reset" type="id" />
-    <item name="text_view_p1" type="id"></item>
-    <item name="text_view_p2" type="id"></item>
-    <item name="button_00" type="id"></item>
-    <item name="button_01" type="id"></item>
-    <item name="button_02" type="id"></item>
-    <item name="button_10" type="id"></item>
-    <item name="button_11" type="id"></item>
-    <item name="button_12" type="id"></item>
-    <item name="button_20" type="id"></item>
-    <item name="button_21" type="id"></item>
-    <item name="button_22" type="id"></item>
+    <item name="text_view_p1" type="id" />
+    <item name="text_view_p2" type="id" />
+    <item name="button_00" type="id" />
+    <item name="button_01" type="id" />
+    <item name="button_02" type="id" />
+    <item name="button_10" type="id" />
+    <item name="button_11" type="id" />
+    <item name="button_12" type="id" />
+    <item name="button_20" type="id" />
+    <item name="button_21" type="id" />
+    <item name="button_22" type="id" />
 </resources>
