@@ -18,9 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int player1points;
 
     private int player2points;
-
-    private TextView textViewPlater1;
-    private TextView textViewPlater2;
+     private TextView textViewPlater1;
+  private TextView textViewPlater2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
