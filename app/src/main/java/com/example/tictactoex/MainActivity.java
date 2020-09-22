@@ -1,7 +1,10 @@
 package com.example.tictactoex;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
@@ -16,16 +19,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int roundCount;
     private int player1points;
     private int player2points;
-    private TextView textViewPlater1;
-    private TextView textViewPlater2;
+    private TextView textViewPlayer1;
+    private TextView textViewPlayer2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textViewPlater1=findViewById(R.id.text_view_p1);
-        textViewPlater2=findViewById(R.id.text_view_p2);
+        textViewPlayer1=findViewById(R.id.text_view_p1);
+        textViewPlayer2=findViewById(R.id.text_view_p2);
 
         for(int i = 0; i <3; i++)
         {
@@ -130,8 +133,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetBoard();
     }
     private void updatePointsText(){
-        textViewPlater1.setText("Player 1: "+player1points);
-        textViewPlater2.setText("Player 2: "+player2points);
+        textViewPlayer1.setText("Player 1: "+player1points);
+        textViewPlayer2.setText("Player 2: "+player2points);
     }
     private void resetBoard(){
         for(int i=0;i<3; i++)
@@ -150,6 +153,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetBoard();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
         super.onSaveInstanceState(outState, outPersistentState);
@@ -157,7 +161,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         outPersistentState.putInt("roundCount", roundCount);
         outPersistentState.putInt("player1Points", player1points);
         outPersistentState.putInt("player2Points", player2points);
-        outPersistentState.putBoolean("player1Turn", player1Turn);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+            outPersistentState.putBoolean("player1Turn", player1Turn);
+        }
     }
 
     @Override
